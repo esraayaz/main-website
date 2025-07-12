@@ -80,13 +80,13 @@ export const infoList = [
     icon: assets.code_icon,
     iconDark: assets.code_icon_dark,
     title: "Languages",
-    description: "HTML, CSS, JavaScript",
+    description: "HTML, CSS, JavaScript ...",
   },
   {
     icon: assets.edu_icon,
     iconDark: assets.edu_icon_dark,
     title: "Education",
-    description: "Coursera, Scrimba, FreeCodeCamp",
+    description: "Coursera, Scrimba, FreeCodeCamp ...",
   },
   {
     icon: assets.project_icon,
