@@ -1,44 +1,46 @@
+import { motion } from "framer-motion";
 import { assets } from "@/assets/assets";
 import Image from "next/image";
 import React from "react";
 
 const Header = () => {
   return (
-    <div className="w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col items-center justify-center gap-4">
-      <div className="w-7/8">
-        <h1 className="text-xl md:text-2xl mb-10 font-Ovo">
-          Hi there! I'm Esra Ayaz
-        </h1>
-        <h1 className="text-3xl sm:text-4xl lg:text-[55px] mb-10 font-Ovo">
-          Front-End Web Developer
-        </h1>
-        <h1 className="text-2xl sm:text-4xl lg:text-[30px] mb-10 font-Ovo">
-          📍 Inverness, UK.
-        </h1>
-        <p className="text-lg mx-auto mb-3 font-Ovo">
-          I am a self-made web developer. I design responsive websites and web
-          applications.
-        </p>
-        <p className="text-lg mx-auto mb-5 font-Ovo">
-          I completed <span className="italic font-semibold">Meta's </span>
-          <span className="italic font-bold">Front-End Developer</span> course.
-          During this process, I also polished my knowledge with other
-          educational platforms such as{" "}
-          <span className="italic font-semibold">
-            Scrimba, FreeCodeCamp, Codecademy, and Udemy.
-          </span>
-        </p>
-        <p className="text-lg mx-auto mb-3 font-Ovo">
-          I am actively seeking a position to develop my skills and learn new
-          things ✨
-        </p>
-      </div>
-      <a
-        href="#contact"
-        className="hidden max-w-45 lg:flex items-center gap-4 px-8 py-1.5 border border-gray-500 rounded-full ml-4 font-Ovo hover:bg-violet-100 active:bg-violet-200"
+    <div className="bg-radial-[at_50%_25%] from-white via-purple-100 to-violet-200 to-90%">
+      <div
+        className="w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col items-center justify-center gap-4"
+        id="header"
       >
-        Contact Me <Image src={assets.arrow_icon} alt="arrow" className="w-3" />
-      </a>
+        <div className="w-7/8 ">
+          <h2 className="text-2xl mb-5 font-Ovo">Hi there! I'm Esra Ayaz,</h2>
+          <p className="text-lg mx-auto mb-5">I am a self-made</p>
+          <h1 className="text-3xl sm:text-4xl lg:text-[55px] mb-10 font-Ovo">
+            Front-End Web Developer
+          </h1>
+          <h2 className="text-xl sm:text-2xl mb-10 font-Ovo">
+            📍 Inverness, UK.
+          </h2>
+        </div>
+        <div>
+          <motion.button
+            className="px-8 py-2.5 rounded-xl relative radical-gradient flex items-center gap-3 hover:bg-violet-200 cursor-pointer"
+            initial={{ "--x": "100%", scla: 1 }}
+            animate={{ "--x": "-100%" }}
+            whileTap={{ scale: 0.97 }}
+            transition={{
+              repeat: Infinity,
+              type: "tween",
+              duration: 2,
+              ease: "easeOut",
+            }}
+          >
+            <span className="tracking-wide h-full w-full block relative linear-mask">
+              <a href="#contact">Contact Me</a>
+            </span>
+            <Image src={assets.right_arrow} alt="arrow" className="w-3" />
+            <span className="block absolute inset-0 rounded-md p-px linear-overlay" />
+          </motion.button>
+        </div>
+      </div>
     </div>
   );
 };
