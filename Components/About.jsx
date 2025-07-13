@@ -7,17 +7,14 @@ const About = () => {
     <div id="about" className="w-full px-[12%] py-20 scroll-mt-20">
       <div className="flex w-full flex-col items-start gap-10">
         <div>
-          <h1 className="mb-5 text-3xl">Let me introduce myself</h1>
-          <p className="text-md mx-auto mb-3">
-            I design responsive websites and web applications.
-          </p>
-          <p className="text-balance leading-8 text-md mx-auto mb-5 ">
+          <h1 className="mb-5 text-3xl">Me</h1>
+          <p className="text-balance leading-8 text-md mb-5 w-10/12">
             I completed{" "}
             <span className="italic font-semibold">
               Meta Front-End Developer
             </span>{" "}
-            course. During this process, I also polished my knowledge with other
-            educational platforms such as Scrimba, FreeCodeCamp, Codecademy, and
+            course and during this process, I also polished my knowledge with
+            other platforms such as Scrimba, FreeCodeCamp, Codecademy, and
             Udemy.
           </p>
           <p className="text-md mx-auto ">
