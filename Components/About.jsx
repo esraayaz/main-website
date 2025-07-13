@@ -4,7 +4,7 @@ import React from "react";
 
 const About = () => {
   return (
-    <div className="w-full px-[12%] py-20 scroll-mt-20">
+    <div id="about" className="w-full px-[12%] py-20 scroll-mt-20">
       <div className="flex w-full flex-col items-start gap-10">
         <div>
           <h1 className="mb-5 text-3xl">Let me introduce myself</h1>
