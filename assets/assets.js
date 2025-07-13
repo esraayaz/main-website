@@ -56,22 +56,22 @@ export const workData = [
   {
     title: "Calculator Project",
     description: "React + CSS",
-    bgImage: "/work-1.png",
+    bgImage: "/work_1.png",
   },
   {
     title: "Website",
     description: "React + Tailwind + Framer Motion",
-    bgImage: "/work-2.png",
+    bgImage: "/work_2.png",
   },
   {
     title: "Registration Component",
     description: "React + CSS",
-    bgImage: "/work-3.png",
+    bgImage: "/work_3.png",
   },
   {
     title: "To-Do App",
     description: "JS + CSS + HTML",
-    bgImage: "/work-4.png",
+    bgImage: "/work_4.png",
   },
 ];
 
