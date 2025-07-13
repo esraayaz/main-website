@@ -11,14 +11,14 @@ const Projects = () => {
         You can check out my projects 😇
       </p>
 
-      <div className="grid grid-cols-auto my-10 gap-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 my-10 gap-5">
         {workData.map((project, index) => (
           <div
             key={index}
             className="aspect-square bg-no-repeat bg-center rounded-lg relative cursor-pointer group"
             style={{
               backgroundImage: `url(${project.bgImage})`,
-              backgroundSize: "670px 670px",
+              backgroundSize: "contain",
             }}
           >
             <div className="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
@@ -33,6 +33,17 @@ const Projects = () => {
           </div>
         ))}
       </div>
+      <a
+        href=""
+        className="w-max flex items-center justify-centergap-2 text-gray-700 border-[0.5px] border-gray-400 rounded-full py-3 px-10 mx-auto my-20 hover:bg-violet-100 duration-500"
+      >
+        See More{" "}
+        <Image
+          src={assets.right_arrow_bold}
+          alt="right-arrow"
+          className="w-4 ml-5"
+        />{" "}
+      </a>
     </div>
   );
 };
