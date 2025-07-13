@@ -54,24 +54,34 @@ export const assets = {
 
 export const workData = [
   {
-    title: "Calculator Project",
-    description: "React + CSS",
+    title: "Figma Prototype",
+    description: "Food Delivery App | Figma",
     bgImage: "/work_1.png",
   },
   {
-    title: "Website",
-    description: "React + Tailwind + Framer Motion",
+    title: "Calculator App",
+    description: "React + CSS",
     bgImage: "/work_2.png",
+  },
+  {
+    title: "Estate Agency Website",
+    description: "React + Tailwind + Framer Motion",
+    bgImage: "/work_3.png",
   },
   {
     title: "Registration Component",
     description: "React + CSS",
-    bgImage: "/work_3.png",
+    bgImage: "/work_4.png",
   },
   {
     title: "To-Do App",
     description: "JS + CSS + HTML",
-    bgImage: "/work_4.png",
+    bgImage: "/work_5.png",
+  },
+  {
+    title: "Recipe Website",
+    description: "JS + CSS + HTML",
+    bgImage: "/work_6.png",
   },
 ];
 
