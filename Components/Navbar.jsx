@@ -29,14 +29,14 @@ const Navbar = () => {
     <div>
       <nav
         className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-8 flex items-center justify-between z-50 ${
-          isScroll ? "bg-white/30 backdrop-blur-sm shadow-sm" : ""
+          isScroll ? "bg-white/60 backdrop-blur-sm shadow-sm" : ""
         }`}
       >
         <a href="#top">
           <Image src={assets.logo} alt="logo" className="w-30 cursor-pointer" />
         </a>
         <ul
-          className={`hidden md:flex items-center gap-20 lg:gap-25 rounded-full px-12 py-3 ${
+          className={`hidden md:flex items-center md:gap-8 lg:gap-20 rounded-full px-12 py-3 ${
             isScroll ? "" : "bg-white/90 shadow-md"
           }  mr-22`}
         >
@@ -53,6 +53,11 @@ const Navbar = () => {
           <li>
             <a className="font-Ovo" href="#projects">
               Projects
+            </a>
+          </li>
+          <li>
+            <a className="font-Ovo" href="#contact">
+              Contact Me
             </a>
           </li>
         </ul>
