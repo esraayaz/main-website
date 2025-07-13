@@ -92,7 +92,7 @@ const Navbar = () => {
             </a>
           </li>
           <li>
-            <a className="font-Ovo" onClick={closeMenu} href="#About">
+            <a className="font-Ovo" onClick={closeMenu} href="#about">
               🐣 About Me
             </a>
           </li>
