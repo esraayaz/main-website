@@ -5,7 +5,10 @@ import React from "react";
 
 const Header = () => {
   return (
-    <div className="bg-radial-[at_50%_25%] from-white via-purple-100 to-violet-200 to-90%">
+    <div
+      id="header"
+      className="bg-radial-[at_50%_25%] from-white via-purple-100 to-violet-200 to-90%"
+    >
       <div
         className="w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col items-center justify-center gap-4"
         id="header"
@@ -22,10 +25,12 @@ const Header = () => {
         </div>
         <div>
           <motion.button
-            className="px-8 py-2.5 rounded-xl relative radical-gradient flex items-center gap-3 hover:bg-violet-200 cursor-pointer"
-            initial={{ "--x": "100%", scla: 1 }}
+            className="px-8 py-2.5 rounded-xl relative radical-gradient flex items-center gap-3 cursor-pointer"
+            initial={{ "--x": "100%" }}
             animate={{ "--x": "-100%" }}
-            whileTap={{ scale: 0.97 }}
+            whileHover={{
+              backgroundColor: "#DDD6FF",
+            }}
             transition={{
               repeat: Infinity,
               type: "tween",
