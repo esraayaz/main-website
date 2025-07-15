@@ -13,8 +13,7 @@ export default {
         darkTheme: "#11001f",
       },
       fontFamily: {
-        Outfit: ["Outfit", "sans-serif"],
-        Ovo: ["Ovo", "serif"],
+        montserrat: ["var(--font-montserrat)", "sans-serif"],
       },
     },
   },
