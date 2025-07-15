@@ -1,49 +1,32 @@
-import { assets, workData } from "@/assets/assets";
-import Image from "next/image";
-
+import { workData } from "@/assets/assets";
+import Link from "next/link";
 import React from "react";
+import All_Projects from "./All_Projects";
 
 const Projects = () => {
   return (
     <div id="projects" className="w-full px-[12%] py-20 scroll-mt-20">
-      <h4 className="text-center mb-2 text-3xl">Projects</h4>
-      <p className="text-center max-w-2xl mx-auto mt-5 mb-12">
-        You can check out my projects 😇
-      </p>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 my-10 gap-5">
-        {workData.map((project, index) => (
-          <div
-            key={index}
-            className="aspect-square bg-no-repeat bg-center rounded-lg relative cursor-pointer group"
-            style={{
-              backgroundImage: `url(${project.bgImage})`,
-              backgroundSize: "contain",
-            }}
-          >
-            <div className="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
-              <div>
-                <h2 className="font-semibold">{project.title}</h2>
-                <p className="text-sm text-gray-700">{project.description}</p>
-              </div>
-              <div className="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition">
-                <Image src={assets.send_icon} alt="send-icon" className="w-5" />
-              </div>
-            </div>
-          </div>
-        ))}
+      <div className="flex w-full flex-col items-start">
+        <div className="flex-auto mx-auto">
+          <ul className="grid grid-cols-auto sm:grid-cols-4 gap-8 max-w-5xl">
+            {workData.slice(0, 4).map(({ title, description }, index) => (
+              <li
+                className="text-left border-[0.5px] border-gray-400  p-8 rounded-xl cursor-pointer hover:bg-violet-50 hover:-translate-y-1 duration-500 hover:shadow-[5px_5px_1px_rgba(0,0,0,1)] hover:shadow-black"
+                key={index}
+              >
+                <h3 className="font-semibold text-black">{title}</h3>
+                <p className="text-gray-600 text-sm mt-4">{description}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <Link
+          href="All_Projects.jsx"
+          className="w-max flex items-center justify-centergap-2 text-gray-700 border-[0.5px] border-gray-400 rounded-full py-3 px-10 mx-auto my-20 hover:bg-violet-100 duration-500"
+        >
+          See More
+        </Link>
       </div>
-      <a
-        href=""
-        className="w-max flex items-center justify-centergap-2 text-gray-700 border-[0.5px] border-gray-400 rounded-full py-3 px-10 mx-auto my-20 hover:bg-violet-100 duration-500"
-      >
-        See More{" "}
-        <Image
-          src={assets.right_arrow_bold}
-          alt="right-arrow"
-          className="w-4 ml-5"
-        />{" "}
-      </a>
     </div>
   );
 };
