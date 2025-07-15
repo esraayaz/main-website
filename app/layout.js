@@ -1,14 +1,11 @@
-import { Outfit, Ovo } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 
-const outfit = Outfit({
+const montserrat = Montserrat({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
-
-const ovo = Ovo({
-  subsets: ["latin"],
-  weight: ["400"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  style: ["normal", "italic"],
+  variable: "--font-montserrat",
 });
 
 export const metadata = {
@@ -19,9 +16,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body
-        className={`${ovo.className} ${outfit.className} antialiased overflow-x-hidden`}
-      >
+      <body className={`${montserrat.className} antialiased overflow-x-hidden`}>
         {children}
       </body>
     </html>
