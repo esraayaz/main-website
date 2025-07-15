@@ -23,7 +23,7 @@ const Header = () => {
         </div>
         <div>
           <motion.button
-            className="px-8 py-2.5 rounded-xl relative radical-gradient flex items-center gap-3 cursor-pointer"
+            className="px-8 py-2.5 rounded-xl relative bg-white flex items-center gap-3 cursor-pointer"
             initial={{ "--x": "100%" }}
             animate={{ "--x": "-100%" }}
             whileHover={{
