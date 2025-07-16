@@ -1,6 +1,6 @@
 import React from "react";
 
-const Contact = () => {
+const page = () => {
   return (
     <div id="contact" className="w-full px-[12%] py-20 scroll-mt-20">
       <h4 className="text-center mb-2 text-3xl">Get in Touch</h4>
@@ -41,4 +41,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default page;

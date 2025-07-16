@@ -1,6 +1,6 @@
 import React from "react";
 
-const About = () => {
+const page = () => {
   return (
     <div id="about" className="w-full px-[12%] py-20 scroll-mt-20">
       <div className="flex w-full flex-col items-start gap-10">
@@ -27,4 +27,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default page;

@@ -1,8 +1,8 @@
-import Navbar from "@/Components/Navbar";
-import Header from "@/Components/Header";
-import About from "@/Components/About";
-import Projects from "@/Components/Projects";
-import Contact from "@/Components/Contact";
+import Navbar from "./comps/Navbar";
+import Header from "./header/page";
+import About from "./about/page";
+import Proje from "./proje/page";
+import Contact from "./contact/page";
 
 export default function Home() {
   return (
@@ -10,7 +10,7 @@ export default function Home() {
       <Navbar />
       <Header />
       <About />
-      <Projects />
+      <Proje />
       <Contact />
     </>
   );

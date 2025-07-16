@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import React from "react";
 
-const Header = () => {
+const page = () => {
   return (
     <div
       id="header"
@@ -16,7 +16,7 @@ const Header = () => {
           <h2 className="text-2xl mb-5 ">Hi there! I'm Esra Ayaz,</h2>
           <p className="text-lg mx-auto mb-5">a self-made</p>
           <h1 className="text-3xl sm:text-4xl lg:text-[55px] mb-10">
-            Front-End Web Developer
+            Web Developer
           </h1>
           <h2 className="text-xl sm:text-2xl mb-10">📍 Inverness, UK.</h2>
         </div>
@@ -46,4 +46,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default page;

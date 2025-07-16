@@ -1,17 +1,10 @@
-"use client";
 import { workData } from "@/assets/assets";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import React from "react";
 
-const Projects = () => {
-  const router = useRouter();
-
-  const handleClick = () => {
-    router.push("/allprojects/page");
-  };
-
+const page = () => {
   return (
-    <div id="projects" className="w-full px-[12%] py-20 scroll-mt-20">
+    <div id="project" className="w-full px-[12%] py-20 scroll-mt-20">
       <div className="flex w-full flex-col items-start">
         <div className="flex-auto mx-auto">
           <ul className="grid grid-cols-auto sm:grid-cols-4 gap-6 max-w-6xl">
@@ -35,16 +28,15 @@ const Projects = () => {
             })}
           </ul>
         </div>
-        <a
-          onClick={handleClick}
-          href="./allprojects/page"
+        <Link
+          href="all"
           className="w-max flex items-center justify-center gap-2 text-gray-700 border-[0.5px] border-gray-400 rounded-full py-3 px-10 mx-auto my-20 hover:bg-violet-100 duration-500"
         >
           See More
-        </a>
+        </Link>
       </div>
     </div>
   );
 };
 
-export default Projects;
+export default page;
