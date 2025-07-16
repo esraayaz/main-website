@@ -33,7 +33,7 @@ const Navbar = () => {
           isScroll ? "bg-white/60 backdrop-blur-sm shadow-sm" : ""
         }`}
       >
-        <a href="#top">
+        <a href="#header">
           <Image src={assets.logo} alt="logo" className="w-30 cursor-pointer" />
         </a>
         <ul
@@ -42,24 +42,16 @@ const Navbar = () => {
           }  mr-22`}
         >
           <li>
-            <a className="font-Ovo" href="#top">
-              Home
-            </a>
+            <a href="#header">Home</a>
           </li>
           <li>
-            <a className="font-Ovo" href="#about">
-              About Me
-            </a>
+            <a href="#about">About Me</a>
           </li>
           <li>
-            <a className="font-Ovo" href="#project">
-              Projects
-            </a>
+            <a href="#project">Projects</a>
           </li>
           <li>
-            <a className="font-Ovo" href="#contact">
-              Contact Me
-            </a>
+            <a href="#contact">Contact Me</a>
           </li>
         </ul>
 
@@ -93,22 +85,22 @@ const Navbar = () => {
             />
           </button>
           <li>
-            <a className="font-Ovo" onClick={closeMenu} href="#top">
+            <a onClick={closeMenu} href="#header">
               🏡 Home
             </a>
           </li>
           <li>
-            <a className="font-Ovo" onClick={closeMenu} href="#about">
+            <a onClick={closeMenu} href="#about">
               🐣 About Me
             </a>
           </li>
           <li>
-            <a className="font-Ovo" onClick={closeMenu} href="#project">
+            <a onClick={closeMenu} href="#project">
               💻 Projects
             </a>
           </li>
           <li>
-            <a className="font-Ovo" onClick={closeMenu} href="#contact">
+            <a onClick={closeMenu} href="#contact">
               💌 Contact Me
             </a>
           </li>
