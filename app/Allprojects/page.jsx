@@ -1,10 +1,12 @@
 import { assets, workData } from "@/assets/assets";
 import Image from "next/image";
 import React from "react";
+import Navbar from "../Components/Navbar";
 
-const All_Projects = () => {
+const page = () => {
   return (
     <div>
+      <Navbar />
       <div id="all-projects" className="w-full px-[12%] py-20 scroll-mt-20">
         <h4 className="text-center mb-2 text-3xl">Projects</h4>
         <p className="text-center max-w-2xl mx-auto mt-5 mb-12">
@@ -45,4 +47,4 @@ const All_Projects = () => {
   );
 };
 
-export default All_Projects;
+export default page;
