@@ -1,6 +1,6 @@
-import { assets, workData } from "@/assets/assets";
-import Image from "next/image";
 import React from "react";
+import Image from "next/image";
+import { assets, workData } from "@/assets/assets";
 import Navbar from "../Components/Navbar";
 
 const page = () => {

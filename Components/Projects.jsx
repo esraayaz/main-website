@@ -1,8 +1,15 @@
+"use client";
 import { workData } from "@/assets/assets";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 const Projects = () => {
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push("/allprojects/page");
+  };
+
   return (
     <div id="projects" className="w-full px-[12%] py-20 scroll-mt-20">
       <div className="flex w-full flex-col items-start">
@@ -28,12 +35,13 @@ const Projects = () => {
             })}
           </ul>
         </div>
-        <Link
-          href="./All_Projects"
+        <a
+          onClick={handleClick}
+          href="./allprojects/page"
           className="w-max flex items-center justify-center gap-2 text-gray-700 border-[0.5px] border-gray-400 rounded-full py-3 px-10 mx-auto my-20 hover:bg-violet-100 duration-500"
         >
           See More
-        </Link>
+        </a>
       </div>
     </div>
   );
