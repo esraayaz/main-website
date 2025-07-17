@@ -10,11 +10,11 @@ const page = () => {
   const sideMenuRef = useRef();
 
   const openMenu = () => {
-    sideMenuRef.current.style.transform = "translateX(16rem)";
+    sideMenuRef.current.style.transform = "translateX(-16rem)";
   };
 
   const closeMenu = () => {
-    sideMenuRef.current.style.transform = "translateX(-16rem)";
+    sideMenuRef.current.style.transform = "translateX(16rem)";
   };
 
   useEffect(() => {
@@ -36,10 +36,7 @@ const page = () => {
             isScroll ? "bg-white/60 backdrop-blur-sm shadow-sm" : ""
           }`}
         >
-          <button className="block md:hidden cursor-pointer" onClick={openMenu}>
-            <Image src={assets.menu_black} alt="menu-black" className="w-6" />
-          </button>
-          <a href="#header" className="md:flex-none cursor-pointer">
+          <a href="/#header" className="cursor-pointer">
             <Image src={assets.logo} alt="logo" className="w-32" />
           </a>
           <ul
@@ -50,7 +47,7 @@ const page = () => {
             <li>
               <a
                 className="hover:text-violet-800 active:text-violet-800 text-sm mx-3 lg:text-base"
-                href="#header"
+                href="/#header"
               >
                 Home
               </a>
@@ -58,7 +55,7 @@ const page = () => {
             <li>
               <a
                 className="hover:text-violet-800 active:text-violet-800 text-sm mx-3 lg:text-base"
-                href="#about"
+                href="/#about"
               >
                 About Me
               </a>
@@ -66,7 +63,7 @@ const page = () => {
             <li>
               <a
                 className="hover:text-violet-800 active:text-violet-800 text-sm mx-3 lg:text-base"
-                href="#project"
+                href="/#project"
               >
                 Projects
               </a>
@@ -74,7 +71,7 @@ const page = () => {
             <li>
               <a
                 className="hover:text-violet-800 active:text-violet-800 text-sm mx-3 lg:text-base"
-                href="#blog"
+                href="/#blog"
               >
                 Blog
               </a>
@@ -82,7 +79,7 @@ const page = () => {
             <li>
               <a
                 className="hover:text-violet-800 active:text-violet-800 text-sm mx-3 lg:text-base"
-                href="#contact"
+                href="/#contact"
               >
                 Contact Me
               </a>
@@ -93,12 +90,18 @@ const page = () => {
             <button className="hidden md:flex cursor-pointer">
               <Image src={assets.moon_icon} alt="moon" className="w-7" />
             </button>
+            <button
+              className="block md:hidden cursor-pointer"
+              onClick={openMenu}
+            >
+              <Image src={assets.menu_black} alt="menu-black" className="w-6" />
+            </button>
           </div>
 
           {/*-- --------- Mobile Menu --------- --*/}
           <ul
             ref={sideMenuRef}
-            className="flex md:hidden flex-col gap-5 py-20 px-10 fixed -left-64 top-0 bottom-0 w-64 z-50 h-screen bg-fuchsia-50 transition duration-500"
+            className="flex md:hidden flex-col gap-5 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-fuchsia-50 transition duration-500"
           >
             <div className="absolute right-6 top-6" onClick={closeMenu}>
               <Image
@@ -115,27 +118,27 @@ const page = () => {
               />
             </button>
             <li>
-              <a onClick={closeMenu} href="#header">
+              <a onClick={closeMenu} href="/#header">
                 🏡 Home
               </a>
             </li>
             <li>
-              <a onClick={closeMenu} href="#about">
+              <a onClick={closeMenu} href="/#about">
                 🐣 About Me
               </a>
             </li>
             <li>
-              <a onClick={closeMenu} href="#project">
+              <a onClick={closeMenu} href="/#project">
                 💻 Projects
               </a>
             </li>
             <li>
-              <a onClick={closeMenu} href="#blog">
+              <a onClick={closeMenu} href="/#blog">
                 🌱 Blog
               </a>
             </li>
             <li>
-              <a onClick={closeMenu} href="#contact">
+              <a onClick={closeMenu} href="/#contact">
                 💌 Contact Me
               </a>
             </li>
