@@ -1,6 +1,9 @@
-import right_arrow_white from "./right-arrow-white.png";
+// -------------------------- LOGO -------------------------- //
 import logo from "./logo.svg";
 import logo_dark from "./logo_dark.svg";
+
+// -------------------------- ICONS -------------------------- //
+import right_arrow_white from "./right-arrow-white.png";
 import mail_icon from "./mail_icon.png";
 import mail_icon_dark from "./mail_icon_dark.png";
 import moon_icon from "./moon_icon.png";
@@ -15,6 +18,19 @@ import right_arrow from "./right-arrow.png";
 import send_icon from "./send-icon.png";
 import right_arrow_bold from "./right-arrow-bold.png";
 import right_arrow_bold_dark from "./right-arrow-bold-dark.png";
+
+// -------------------------- TECH ICONS -------------------------- //
+import Boostrap from "./Boostrap.svg";
+import Canva from "./Canva.svg";
+import CSS3 from "./CSS3.svg";
+import Figma from "./Figma.svg";
+import GitHub from "./GitHub.svg";
+import HTML5 from "./HTML5.svg";
+import JavaScript from "./JavaScript.svg";
+import Linkedin from "./Linkedin.svg";
+import Next from "./Next.svg";
+import Tailwind from "./Tailwind.svg";
+import React from "./Reaxt.svg";
 
 export const assets = {
   right_arrow_white,
@@ -34,6 +50,17 @@ export const assets = {
   send_icon,
   right_arrow_bold,
   right_arrow_bold_dark,
+  Boostrap,
+  Canva,
+  CSS3,
+  Figma,
+  GitHub,
+  HTML5,
+  JavaScript,
+  Linkedin,
+  Next,
+  Tailwind,
+  React,
 };
 
 export const workData = [
