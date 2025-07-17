@@ -22,12 +22,14 @@ const page = () => {
         </div>
         <div>
           <motion.button
-            className="px-8 py-2.5 rounded-xl relative bg-white flex items-center gap-3 cursor-pointer"
+            className="px-8 py-2.5 rounded-xl relative bg-white flex items-center gap-3 cursor-pointer hover:bg-violet-100 duration-500"
+            onClick={() => {
+              document
+                .getElementById("contact")
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
             initial={{ "--x": "100%" }}
             animate={{ "--x": "-100%" }}
-            whileHover={{
-              backgroundColor: "#DDD6FF",
-            }}
             transition={{
               repeat: Infinity,
               type: "tween",
@@ -36,7 +38,7 @@ const page = () => {
             }}
           >
             <span className="tracking-wide h-full w-full block relative linear-mask">
-              <a href="#contact">Get in Touch</a>
+              Get in Touch
             </span>
             <span className="block absolute inset-0 rounded-md p-px linear-overlay" />
           </motion.button>
