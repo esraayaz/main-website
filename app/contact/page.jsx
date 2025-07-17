@@ -11,13 +11,13 @@ const page = () => {
       <form className="max-w-2xl mx-auto">
         <div className="grid grid-cols-2 gap-6 mt-10 mb-8">
           <input
-            className="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white"
+            className="sm:text-sm flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white"
             type="text"
             placeholder="Enter your name"
             required
           />
           <input
-            className="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white"
+            className="sm:text-sm flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white"
             type="email"
             placeholder="Enter your email"
             required
@@ -31,7 +31,7 @@ const page = () => {
         ></textarea>
 
         <button
-          className="py-3 px-8 w-max flex items-center justify-between gap-2 bg-violet-100  rounded-full mx-auto hover:bg-violet-200 active:bg-violet-400 duration-500"
+          className="py-3 px-8 w-max flex items-center justify-between gap-2  rounded-full mx-auto text-gray-700 border-[0.5px] border-gray-400 hover:bg-violet-100 active:bg-violet-100 duration-500"
           type="submit"
         >
           Submit
