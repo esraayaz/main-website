@@ -10,11 +10,11 @@ const page = () => {
   const sideMenuRef = useRef();
 
   const openMenu = () => {
-    sideMenuRef.current.style.transform = "translateX(-16rem)";
+    sideMenuRef.current.style.transform = "translateX(16rem)";
   };
 
   const closeMenu = () => {
-    sideMenuRef.current.style.transform = "translateX(16rem)";
+    sideMenuRef.current.style.transform = "translateX(-16rem)";
   };
 
   useEffect(() => {
@@ -28,85 +28,114 @@ const page = () => {
   }, []);
 
   return (
-    <div className="mb-20">
+    <div>
+      {/*-- --------- Navbar --------- --*/}
       <div>
         <nav
-          className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-8 flex items-center justify-between z-50 ${
+          className={`w-full fixed px-5 md:px-6 lg:px-8 xl:px-[8%] py-8 flex items-center justify-between z-50 ${
             isScroll ? "bg-white/60 backdrop-blur-sm shadow-sm" : ""
           }`}
         >
-          <a href="/#header">
-            <Image
-              src={assets.logo}
-              alt="logo"
-              className="w-30 cursor-pointer"
-            />
+          <button className="block md:hidden cursor-pointer" onClick={openMenu}>
+            <Image src={assets.menu_black} alt="menu-black" className="w-6" />
+          </button>
+          <a href="#header" className="md:flex-none cursor-pointer">
+            <Image src={assets.logo} alt="logo" className="w-32" />
           </a>
           <ul
-            className={`hidden md:flex items-center md:gap-8 lg:gap-20 rounded-full px-12 py-3 ${
+            className={`hidden md:flex items-center gap-4 lg:gap-8 xl:gap-12 rounded-full px-6 lg:px-8 xl:px-12 py-3 ${
               isScroll ? "" : "bg-white/90 shadow-md"
-            }  mr-22`}
+            }  mx-4`}
           >
             <li>
-              <a href="/#header">Home</a>
+              <a
+                className="hover:text-violet-800 active:text-violet-800 text-sm mx-3 lg:text-base"
+                href="#header"
+              >
+                Home
+              </a>
             </li>
             <li>
-              <a href="/#about">About Me</a>
+              <a
+                className="hover:text-violet-800 active:text-violet-800 text-sm mx-3 lg:text-base"
+                href="#about"
+              >
+                About Me
+              </a>
             </li>
             <li>
-              <a href="/#project">Projects</a>
+              <a
+                className="hover:text-violet-800 active:text-violet-800 text-sm mx-3 lg:text-base"
+                href="#project"
+              >
+                Projects
+              </a>
             </li>
             <li>
-              <a href="/#contact">Contact Me</a>
+              <a
+                className="hover:text-violet-800 active:text-violet-800 text-sm mx-3 lg:text-base"
+                href="#blog"
+              >
+                Blog
+              </a>
+            </li>
+            <li>
+              <a
+                className="hover:text-violet-800 active:text-violet-800 text-sm mx-3 lg:text-base"
+                href="#contact"
+              >
+                Contact Me
+              </a>
             </li>
           </ul>
 
-          <div className="flex items-center">
+          <div className="flex items-center gap-2">
             <button className="hidden md:flex cursor-pointer">
-              <Image src={assets.moon_icon} alt="moon" className="w-6" />
-            </button>
-
-            <button className="block md:hidden" onClick={openMenu}>
-              <Image src={assets.menu_black} alt="menu-black" className="w-6" />
+              <Image src={assets.moon_icon} alt="moon" className="w-7" />
             </button>
           </div>
 
           {/*-- --------- Mobile Menu --------- --*/}
           <ul
             ref={sideMenuRef}
-            className="flex md:hidden flex-col gap-5 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-fuchsia-50 transition duration-500"
+            className="flex md:hidden flex-col gap-5 py-20 px-10 fixed -left-64 top-0 bottom-0 w-64 z-50 h-screen bg-fuchsia-50 transition duration-500"
           >
             <div className="absolute right-6 top-6" onClick={closeMenu}>
               <Image
                 src={assets.close_black}
                 alt="close-icon"
-                className="w-5 mt-3 cursor-pointer"
+                className="w-8 mt-3 cursor-pointer"
               />
             </div>
             <button>
               <Image
                 src={assets.moon_icon}
                 alt="moon"
-                className="md:hidden w-6 cursor-pointer"
+                className="md:hidden w-8 mb-4 cursor-pointer"
               />
             </button>
             <li>
-              <a onClick={closeMenu} href="/#header">
+              <a onClick={closeMenu} href="#header">
                 🏡 Home
               </a>
             </li>
             <li>
-              <a onClick={closeMenu} href="/#about">
+              <a onClick={closeMenu} href="#about">
                 🐣 About Me
               </a>
             </li>
             <li>
-              <a onClick={closeMenu} href="/#project">
+              <a onClick={closeMenu} href="#project">
                 💻 Projects
               </a>
             </li>
             <li>
-              <a onClick={closeMenu} href="/#contact">
+              <a onClick={closeMenu} href="#blog">
+                🌱 Blog
+              </a>
+            </li>
+            <li>
+              <a onClick={closeMenu} href="#contact">
                 💌 Contact Me
               </a>
             </li>
@@ -116,25 +145,30 @@ const page = () => {
 
       {/*-- --------- All Projects --------- --*/}
 
-      <div id="all-projects" className="w-full px-[12%] py-30 scroll-mt-20">
-        <h4 className="text-center mb-2 text-3xl">Projects</h4>
-        <p className="text-center max-w-2xl mx-auto mt-5 mb-15">
+      <div
+        id="all-projects"
+        className="w-full px-4 sm:px-6 lg:px-8 xl:px-[12%] py-20 pt-36"
+      >
+        <h4 className="text-left mb-2 text-3xl">Projects</h4>
+        <p className="text-left max-w-2xl t-5 mb-12">
           You can check out my projects 😇
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8 xl:gap-10">
           {workData.map((project, index) => (
             <div
               key={index}
               className="aspect-square bg-no-repeat bg-center rounded-lg relative cursor-pointer group transition-all duration-500 grayscale hover:grayscale-0"
               style={{
                 backgroundImage: `url(${project.bgImage})`,
-                backgroundSize: "contain",
+                backgroundSize: "cover",
               }}
             >
               <div className="bg-white w-5/6 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
                 <div>
-                  <h2 className="font-semibold">{project.title}</h2>
+                  <h2 className="font-semibold text-sm lg:text-base">
+                    {project.title}
+                  </h2>
                 </div>
                 <div className="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition">
                   <Image
@@ -148,12 +182,14 @@ const page = () => {
           ))}
         </div>
       </div>
-      <Link
-        href="/#project"
-        className="w-max flex items-center justify-center gap-2 text-gray-700 border-[0.5px] border-gray-400 rounded-full py-3 px-10 mx-auto hover:bg-violet-100 duration-500"
-      >
-        Back
-      </Link>
+      <div className="w-full flex justify-center pb-20">
+        <Link
+          href="/#project"
+          className="flex items-center justify-center gap-2 text-gray-700 border-[0.5px] border-gray-400 rounded-full py-3 px-10 hover:bg-violet-100 active:bg-violet-100 duration-500"
+        >
+          Back
+        </Link>
+      </div>
     </div>
   );
 };
