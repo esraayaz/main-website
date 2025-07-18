@@ -20,17 +20,17 @@ import right_arrow_bold from "./right-arrow-bold.png";
 import right_arrow_bold_dark from "./right-arrow-bold-dark.png";
 
 // -------------------------- TECH ICONS -------------------------- //
-import Boostrap from "./Boostrap.svg";
-import Canva from "./Canva.svg";
-import CSS3 from "./CSS3.svg";
-import Figma from "./Figma.svg";
-import GitHub from "./GitHub.svg";
-import HTML5 from "./HTML5.svg";
-import JavaScript from "./JavaScript.svg";
-import Linkedin from "./Linkedin.svg";
-import Next from "./Next.svg";
-import Tailwind from "./Tailwind.svg";
-import React from "./Reaxt.svg";
+import Bootstrap from "./Bootstrap.png";
+import Canva from "./Canva.png";
+import CSS from "./CSS.png";
+import Figma from "./Figma.png";
+import GitHub from "./GitHub.png";
+import HTML from "./HTML.png";
+import JavaScript from "./JavaScript.png";
+import Linkedin from "./Linkedin.png";
+import Next from "./Next.png";
+import Tailwind from "./Tailwind.png";
+import React from "./React.png";
 
 export const assets = {
   right_arrow_white,
@@ -50,18 +50,23 @@ export const assets = {
   send_icon,
   right_arrow_bold,
   right_arrow_bold_dark,
-  Boostrap,
+};
+
+export const techIcon = {
+  Bootstrap,
   Canva,
-  CSS3,
+  CSS,
   Figma,
-  GitHub,
-  HTML5,
+  HTML,
   JavaScript,
-  Linkedin,
   Next,
   Tailwind,
   React,
 };
+
+export const linkedin = Linkedin;
+
+export const gitHub = GitHub;
 
 export const workData = [
   {
