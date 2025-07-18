@@ -6,17 +6,17 @@ const page = () => {
   return (
     <div
       id="project"
-      className="w-full px-4 sm:px-6 lg:px-8 xl:px-[12%] py-20 scroll-mt-20"
+      className="w-full px-4 sm:px-6 lg:px-8 xl:px-[12%] py-20 scroll-mt-20 min-h-screen"
     >
       <div className="flex w-full flex-col items-center">
         <div className="w-full max-w-6xl">
           <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {workData.slice(0, 4).map(({ title, description }, index) => {
               const colors = [
-                "hover:bg-violet-50",
-                "hover:bg-sky-50",
-                "hover:bg-green-50",
-                "hover:bg-yellow-50",
+                "hover:bg-violet-50 active:bg-violet-100",
+                "hover:bg-sky-50 active:bg-sky-100",
+                "hover:bg-green-50 active:bg-green-100",
+                "hover:bg-yellow-50 active:bg-yellow-100",
               ];
 
               return (
