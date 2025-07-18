@@ -3,6 +3,9 @@ import { gitHub, linkedin, techIcon } from "@/assets/assets";
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const page = () => {
   const techIcons = Object.entries(techIcon);
@@ -16,41 +19,63 @@ const page = () => {
 
   useEffect(() => {
     // Hiding
-    gsap.set(containerRef.current, {
-      y: 100,
+    gsap.set(
+      [
+        containerRef.current,
+        titleRef.current,
+        textRefs.current,
+        socialRef.current,
+      ],
+      {
+        x: -100,
+        opacity: 0,
+      }
+    );
+
+    // Circle
+    gsap.set(circleRef.current, {
+      scale: 0,
+      rotation: 180,
       opacity: 0,
     });
 
     // Timeline
     const tl = gsap.timeline({
-      delay: 0.2,
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top 90%",
+        end: "bottom 60%",
+        toggleActions: "play none reverse reverse",
+        scrub: true,
+        invalidateOnRefresh: true,
+        refreshPriority: 1,
+      },
     });
 
-    // Animation
+    // Animation Order
     tl.to(containerRef.current, {
-      y: 0,
+      x: 0,
       opacity: 1,
       duration: 1.2,
       ease: "power3.out",
     })
 
-      .from(
+      .to(
         titleRef.current,
         {
-          y: 50,
-          opacity: 0,
+          x: 0,
+          opacity: 1,
           duration: 0.8,
           ease: "power2.out",
         },
         "-=0.8"
       )
 
-      //
-      .from(
+      .to(
         textRefs.current,
         {
-          y: 30,
-          opacity: 0,
+          x: 0,
+          opacity: 1,
           duration: 0.6,
           stagger: 0.2,
           ease: "power2.out",
@@ -58,41 +83,40 @@ const page = () => {
         "-=0.6"
       )
 
-      //
-      .from(
-        circleRef.current,
-        {
-          scale: 0,
-          rotation: 180,
-          opacity: 0,
-          duration: 1,
-          ease: "back.out(1.7)",
-        },
-        "-=0.8"
-      )
-
-      // Social media butonları
-      .from(
+      .to(
         socialRef.current,
         {
-          y: 30,
-          opacity: 0,
+          x: 0,
+          opacity: 1,
           duration: 0.6,
           ease: "power2.out",
         },
         "-=0.4"
+      )
+
+      .to(
+        circleRef.current,
+        {
+          scale: 1,
+          rotation: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "power1.out",
+        },
+        "-=1.5"
       );
 
     // Cleanup
     return () => {
       tl.kill();
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);
 
   return (
     <div
       id="about"
-      className="w-full px-4 sm:px-6 lg:px-[12%] py-10 sm:py-20 scroll-mt-20 min-h-screen"
+      className="w-full px-4 sm:px-6 lg:px-[12%] py-10 sm:py-20 scroll-mt-20 min-h-screen bg-radial-[at_50%_80%] from-indigo-800 via-indigo-900 to-indigo-950 to-80% text-white"
     >
       <div
         ref={containerRef}
@@ -152,7 +176,7 @@ const page = () => {
                   height={20}
                 />
               </div>
-              <button className="px-8 py-2.5 rounded-xl bg-sky-50 flex items-center gap-3 cursor-pointer hover:bg-sky-100 active:bg-sky-100 duration-500 text-base">
+              <button className="px-8 py-2.5 rounded-xl bg-indigo-800 border-[0.5px] flex items-center gap-3 cursor-pointer hover:bg-indigo-600 active:bg-indigo-600 duration-500 text-base">
                 <a href="https://www.linkedin.com/in/esraayaz/" target="_blank">
                   Linkedin
                 </a>
@@ -168,7 +192,7 @@ const page = () => {
                   height={20}
                 />
               </div>
-              <button className="px-8 py-2.5 rounded-xl bg-slate-50 flex items-center gap-3 cursor-pointer hover:bg-slate-100 active:bg-slate-100 duration-500 text-base">
+              <button className="px-8 py-2.5 rounded-xl bg-indigo-800 border-[0.5px] flex items-center gap-3 cursor-pointer hover:bg-indigo-600 active:bg-indigo-600 duration-500 text-base">
                 <a href="https://github.com/esraayaz" target="_blank">
                   GitHub
                 </a>
@@ -325,7 +349,7 @@ const page = () => {
                   height={20}
                 />
               </div>
-              <button className="px-3 sm:px-6 py-2 sm:py-2.5 rounded-xl border-[0.5px] border-sky-100 bg-sky-50 flex items-center gap-2 sm:gap-3 cursor-pointer hover:bg-sky-100 active:bg-sky-100 duration-500 text-sm sm:text-base">
+              <button className="px-3 sm:px-6 py-2 sm:py-2.5 rounded-xl bg-indigo-800 border-[0.5px] flex items-center gap-2 sm:gap-3 cursor-pointer hover:bg-indigo-600 active:bg-indigo-600 duration-500 text-sm sm:text-base">
                 <a href="https://www.linkedin.com/in/esraayaz/" target="_blank">
                   Linkedin
                 </a>
@@ -341,7 +365,7 @@ const page = () => {
                   height={20}
                 />
               </div>
-              <button className="px-3 sm:px-6 py-2 sm:py-2.5 rounded-xl border-[0.5px] border-slate-100 bg-slate-50 flex items-center gap-2 sm:gap-3 cursor-pointer hover:bg-slate-100 active:bg-slate-100 duration-500 text-sm sm:text-base">
+              <button className="px-3 sm:px-6 py-2 sm:py-2.5 rounded-xl bg-indigo-800 border-[0.5px] flex items-center gap-2 sm:gap-3 cursor-pointer hover:bg-indigo-600 active:bg-indigo-600 duration-500 text-sm sm:text-base">
                 <a href="https://github.com/esraayaz" target="_blank">
                   GitHub
                 </a>
