@@ -2,7 +2,6 @@ import Navbar from "./comps/Navbar";
 import Header from "./header/page";
 import About from "./about/page";
 import Proje from "./proje/page";
-import Blog from "./blog/page";
 import Contact from "./contact/page";
 
 export default function Home() {
@@ -12,7 +11,6 @@ export default function Home() {
       <Header />
       <About />
       <Proje />
-      <Blog />
       <Contact />
     </>
   );
