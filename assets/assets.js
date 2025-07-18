@@ -73,30 +73,36 @@ export const workData = [
     title: "Figma Prototype",
     description: "Food Delivery App | Figma",
     bgImage: "/work_1.png",
+    url: "https://www.figma.com/design/RmTG5VmXeg1b4TEmzsbn8N/Little-Lemon-Prototype?node-id=0-1&t=fnObPAE59nZQZSFB-1",
   },
   {
     title: "Calculator App",
     description: "React + CSS",
     bgImage: "/work_2.png",
+    url: "https://venerable-fudge-23278b.netlify.app/",
   },
   {
     title: "Estate Agency Website",
     description: "React + Tailwind + Framer Motion",
     bgImage: "/work_3.png",
+    url: "https://moonlit-sundae-393839.netlify.app/",
   },
   {
     title: "Registration Component",
     description: "React + CSS",
     bgImage: "/work_4.png",
+    url: "https://monumental-haupia-eae978.netlify.app/",
   },
   {
     title: "To-Do App",
     description: "JS + CSS + HTML",
     bgImage: "/work_5.png",
+    url: "https://incandescent-monstera-580c26.netlify.app/",
   },
   {
     title: "Recipe Website",
     description: "JS + CSS + HTML",
     bgImage: "/work_6.png",
+    url: "https://musical-paletas-41c815.netlify.app/",
   },
 ];
