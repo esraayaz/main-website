@@ -30,9 +30,7 @@ const Navbar = () => {
     <div>
       <nav
         className={`w-full fixed  px-5 md:px-6 lg:px-8 xl:px-[8%] py-8 flex items-center justify-between z-50 ${
-          isScroll
-            ? "bg-slate-800/80 text-white backdrop-blur-sm shadow-sm"
-            : ""
+          isScroll ? "bg-black/30 text-white backdrop-blur-sm shadow-sm" : ""
         }`}
       >
         <a href="#header" className="cursor-pointer">
@@ -69,6 +67,7 @@ const Navbar = () => {
               Projects
             </a>
           </li>
+          {/* --------------- {" "}
           <li>
             <a
               className="hover:text-indigo-400 active:indigo-400 text-sm mx-3 lg:text-base"
@@ -76,13 +75,14 @@ const Navbar = () => {
             >
               Blog
             </a>
-          </li>
+          </li>{" "}
+          --------------- */}
           <li>
             <a
               className="hover:text-indigo-600 active:indigo-600 text-sm mx-3 lg:text-base"
               href="#contact"
             >
-              Contact Me
+              Contact
             </a>
           </li>
         </ul>
@@ -130,14 +130,14 @@ const Navbar = () => {
               💻 Projects
             </a>
           </li>
-          <li>
+          {/*<li>
             <a onClick={closeMenu} href="#blog">
               🌱 Blog
             </a>
-          </li>
+          </li>*/}
           <li>
             <a onClick={closeMenu} href="#contact">
-              💌 Contact Me
+              💌 Contact
             </a>
           </li>
           <div className="mt-auto pt-8 flex flex-col items-center gap-4">
