@@ -70,7 +70,7 @@ const page = () => {
   return (
     <div
       id="header"
-      className="bg-radial-[at_50%_25%] from-slate-800 via-slate-900 to-slate-950 to-90% text-white"
+      className="bg-radial-[at_50%_25%] from-slate-800 via-slate-900 to-slate-950 to-80% text-white"
     >
       <div
         className="w-11/12 max-w-4xl text-center mx-auto h-screen flex flex-col items-center justify-center gap-4"
