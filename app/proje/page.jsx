@@ -51,8 +51,9 @@ const page = () => {
     >
       <div className="flex w-full flex-col items-center">
         <div className="w-full max-w-6xl">
-          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {workData.slice(0, 4).map(({ title, description }, index) => {
+          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-20">
+            {workData.slice(0, 4).map((project, index) => {
+              const { title, description } = project;
               const colors = [
                 "hover:bg-indigo-300/70 active:bg-indigo-300/70",
                 "hover:bg-amber-300/70 active:bg-amber-300/70",
@@ -65,6 +66,11 @@ const page = () => {
                   ref={(el) => (cardsRef.current[index] = el)}
                   className={`text-left border-[0.5px] border-gray-400 hover:border-black active:border-black p-6 sm:p-8 rounded-xl cursor-pointer ${colors[index]} hover:-translate-y-1 duration-500 hover:shadow-[10px_10px_1px_rgba(0,0,0,1)] active:shadow-[10px_10px_1px_rgba(0,0,0,1)] hover:text-black active:text-black hover:shadow-black min-h-[160px] sm:min-h-[180px] flex flex-col justify-between`}
                   key={index}
+                  onClick={() => {
+                    if (project.url) {
+                      window.open(project.url, "_blank");
+                    }
+                  }}
                 >
                   <h3 className="font-semibold text-base sm:text-lg leading-tight">
                     {title}

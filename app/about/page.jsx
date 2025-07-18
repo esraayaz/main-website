@@ -140,22 +140,22 @@ const page = () => {
 
           <p
             ref={(el) => (textRefs.current[1] = el)}
-            className="text-balance leading-6 sm:leading-8 mb-5 w-full lg:w-10/12 text-left lg:text-left"
+            className="text-balance leading-6 sm:leading-8 mb-5 w-full lg:w-10/12 text-left lg:text-left text-gray-400"
           >
             I completed{" "}
-            <span className="italic font-semibold">
+            <span className="italic font-semibold text-white">
               Meta Front-End Developer
             </span>{" "}
-            course and during this process, I also polished my knowledge with
+            course and during this process, I also refined my knowledge with
             other platforms such as Scrimba, FreeCodeCamp, Codecademy, and
             Udemy.
           </p>
 
           <p
             ref={(el) => (textRefs.current[2] = el)}
-            className="text-left lg:text-left mb-10 lg:mb-0"
+            className="text-left lg:text-left mb-10 lg:mb-0 text-gray-400"
           >
-            <span className="italic font-semibold">
+            <span className="italic font-semibold text-white">
               I am looking a position
             </span>{" "}
             actively to develop my skills and gaining experience ✨

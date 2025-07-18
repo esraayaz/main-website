@@ -13,7 +13,7 @@ const page = () => {
 
   // Refs for animations
   const titleRef = useRef(null);
-  const descriptionRef = useRef(null);
+  const pRef = useRef(null);
   const projectsRef = useRef(null);
   const sideMenuRef = useRef();
 
@@ -37,8 +37,8 @@ const page = () => {
     // GSAP Animations
     const tl = gsap.timeline();
 
-    tl.fromTo(
-      titleRef.current,
+    gsap.fromTo(
+      [titleRef.current, pRef.current],
       {
         x: -100,
         opacity: 0,
@@ -49,19 +49,6 @@ const page = () => {
         duration: 1,
         ease: "power3.out",
       }
-    ).fromTo(
-      descriptionRef.current,
-      {
-        x: -100,
-        opacity: 0,
-      },
-      {
-        x: 0,
-        opacity: 1,
-        duration: 0.8,
-        ease: "power3.out",
-      },
-      "-=0.2"
     );
 
     gsap.fromTo(
@@ -77,8 +64,8 @@ const page = () => {
         scale: 1,
         duration: 0.8,
         ease: "power3.out",
-        delay: 1.2,
-        stagger: 0.15,
+        delay: 0.5,
+        stagger: 0.2,
         scrollTrigger: {
           trigger: projectsRef.current,
           start: "top 80%",
@@ -262,16 +249,13 @@ const page = () => {
         id="all-projects"
         className="w-full px-4 sm:px-6 lg:px-8 xl:px-[12%] py-20 pt-36"
       >
-        <h4
+        <h2
           ref={titleRef}
           className="text-left mb-2 sm:mt-10 mt-15 text-3xl text-white"
         >
           Projects
-        </h4>
-        <p
-          ref={descriptionRef}
-          className="text-left max-w-2xl t-5 mb-15 text-white"
-        >
+        </h2>
+        <p ref={pRef} className="text-left max-w-2xl t-5 mb-15 text-white">
           You can check out my projects 😇
         </p>
 
@@ -282,11 +266,12 @@ const page = () => {
           {workData.map((project, index) => (
             <div
               key={index}
-              className="aspect-square bg-no-repeat bg-center rounded-lg relative cursor-pointer group transition-all duration-500 grayscale hover:grayscale-0 active:grayscale-0"
+              className="aspect-square bg-no-repeat bg-center rounded-lg relative cursor-pointer group transition-all duration-500 grayscale hover:grayscale-0 active:grayscale-0 opacity-0 -translate-y-24 scale-75  w-5/6 sm:w-full mx-auto"
               style={{
                 backgroundImage: `url(${project.bgImage})`,
                 backgroundSize: "cover",
               }}
+              onClick={() => window.open(project.url, "_blank")}
             >
               <div className="bg-white w-5/6 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
                 <div>
