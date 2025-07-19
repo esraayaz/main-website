@@ -111,14 +111,14 @@ const page = () => {
             name="name"
             className="sm:text-sm flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-transparent"
             type="text"
-            placeholder="Enter your name"
+            placeholder="Your name"
             required
           />
           <input
             name="email"
             className="sm:text-sm flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-transparent"
             type="email"
-            placeholder="Enter your email"
+            placeholder="Your email"
             required
           />
         </div>
@@ -126,7 +126,7 @@ const page = () => {
           name="message"
           className="w-full p-4 outline-none border-[0.5px] border-gray-400 rounded-md bg-transparent mb-6"
           rows="6"
-          placeholder="Enter your message"
+          placeholder="Your message"
           required
         ></textarea>
 
@@ -134,12 +134,7 @@ const page = () => {
           className="py-3 px-8 w-max flex items-center justify-between gap-2 rounded-full mx-auto border-[0.5px] border-gray-400 bg-slate-900/70 hover:bg-slate-800 active:bg-slate-800 duration-500"
           type="submit"
         >
-          {result ? result : "Submit"}
-          <Image
-            src={assets.right_arrow_bold_dark}
-            alt="arrow"
-            className="ml-3 w-4"
-          />
+          {result ? result : "Send"}
         </button>
       </form>
       <ToastContainer
