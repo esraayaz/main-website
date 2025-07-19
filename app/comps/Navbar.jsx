@@ -88,9 +88,9 @@ const Navbar = () => {
         </ul>
 
         <div className="flex items-center gap-2">
-          <button className="hidden md:flex cursor-pointer">
-            <Image src={assets.sun_icon} alt="moon" className="w-10" />
-          </button>
+          {/* <button className="hidden md:flex cursor-pointer">
+            <Image src={assets.sun_icon} alt="sun" className="w-10" />
+          </button> */}
           <button className="block md:hidden cursor-pointer" onClick={openMenu}>
             <Image src={assets.menu_white} alt="menu-black" className="w-6" />
           </button>
@@ -109,11 +109,11 @@ const Navbar = () => {
             />
           </div>
           <button>
-            <Image
+            {/* <Image
               src={assets.sun_icon}
-              alt="moon"
+              alt="sun"
               className="md:hidden w-10 mb-4 cursor-pointer"
-            />
+            /> */}
           </button>
           <li>
             <a onClick={closeMenu} href="#header">
