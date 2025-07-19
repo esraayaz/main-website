@@ -175,27 +175,27 @@ const page = () => {
               /> */}
             </button>
             <li>
-              <a onClick={closeMenu} href="#header">
+              <a onClick={closeMenu} href="/#header">
                 🏡 Home
               </a>
             </li>
             <li>
-              <a onClick={closeMenu} href="#about">
+              <a onClick={closeMenu} href="/#about">
                 🐣 About Me
               </a>
             </li>
             <li>
-              <a onClick={closeMenu} href="#project">
+              <a onClick={closeMenu} href="/#project">
                 💻 Projects
               </a>
             </li>
             {/*<li>
-                      <a onClick={closeMenu} href="#blog">
+                      <a onClick={closeMenu} href="/#blog">
                         🌱 Blog
                       </a>
                     </li>*/}
             <li>
-              <a onClick={closeMenu} href="#contact">
+              <a onClick={closeMenu} href="/#contact">
                 💌 Contact
               </a>
             </li>
