@@ -43,10 +43,8 @@ const page = () => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
-        start: "top 90%",
-        end: "bottom 60%",
-        toggleActions: "play none reverse reverse",
-        scrub: true,
+        start: "top 80%",
+        toggleActions: "play none play reverse",
         invalidateOnRefresh: true,
         refreshPriority: 1,
       },
