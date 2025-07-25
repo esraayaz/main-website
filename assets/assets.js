@@ -88,6 +88,12 @@ export const workData = [
     url: "https://moonlit-sundae-393839.netlify.app/",
   },
   {
+    title: "Loading Bar",
+    description: "HTML + CSS + JS",
+    bgImage: "/work_7.png",
+    url: "https://gorgeous-otter-d34d6f.netlify.app/",
+  },
+  {
     title: "Registration Component",
     description: "React + CSS",
     bgImage: "/work_4.png",
