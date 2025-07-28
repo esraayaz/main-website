@@ -102,7 +102,7 @@ const page = () => {
           >
             <li>
               <a
-                className="hover:text-violet-800 active:text-violet-800 text-sm mx-3 lg:text-base"
+                className="hover:text-indigo-400 active:text-indigo-400 text-sm mx-3 lg:text-base"
                 href="/#header"
               >
                 Home
@@ -110,7 +110,7 @@ const page = () => {
             </li>
             <li>
               <a
-                className="hover:text-violet-800 active:text-violet-800 text-sm mx-3 lg:text-base"
+                className="hover:text-indigo-400 active:text-indigo-400 text-sm mx-3 lg:text-base"
                 href="/#about"
               >
                 About Me
@@ -118,7 +118,7 @@ const page = () => {
             </li>
             <li>
               <a
-                className="hover:text-violet-800 active:text-violet-800 text-sm mx-3 lg:text-base"
+                className="hover:text-indigo-400 active:text-indigo-400 text-sm mx-3 lg:text-base"
                 href="/#project"
               >
                 Projects
@@ -126,7 +126,7 @@ const page = () => {
             </li>
             {/*<li>
               <a
-                className="hover:text-violet-800 active:text-violet-800 text-sm mx-3 lg:text-base"
+                className="hover:text-indigo-400 active:text-indigo-400 text-sm mx-3 lg:text-base"
                 href="/#blog"
               >
                 Blog
@@ -135,7 +135,7 @@ const page = () => {
             */}
             <li>
               <a
-                className="hover:text-violet-800 active:text-violet-800 text-sm mx-3 lg:text-base"
+                className="hover:text-indigo-400 active:text-indigo-400 text-sm mx-3 lg:text-base"
                 href="/#contact"
               >
                 Contact Me

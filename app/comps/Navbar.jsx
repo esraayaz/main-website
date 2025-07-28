@@ -45,7 +45,7 @@ const Navbar = () => {
         >
           <li>
             <a
-              className="hover:text-indigo-400 active:indigo-400 text-sm mx-3 lg:text-base"
+              className="hover:text-indigo-400 active:text-indigo-400 text-sm mx-3 lg:text-base"
               href="#header"
             >
               Home
@@ -53,7 +53,7 @@ const Navbar = () => {
           </li>
           <li>
             <a
-              className="hover:text-indigo-400 active:indigo-400 text-sm mx-3 lg:text-base"
+              className="hover:text-indigo-400 active:text-indigo-400 text-sm mx-3 lg:text-base"
               href="#about"
             >
               About Me
@@ -61,7 +61,7 @@ const Navbar = () => {
           </li>
           <li>
             <a
-              className="hover:text-indigo-400 active:indigo-400 text-sm mx-3 lg:text-base"
+              className="hover:text-indigo-400 active:text-indigo-400 text-sm mx-3 lg:text-base"
               href="#project"
             >
               Projects
@@ -70,7 +70,7 @@ const Navbar = () => {
           {/* --------------- {" "}
           <li>
             <a
-              className="hover:text-indigo-400 active:indigo-400 text-sm mx-3 lg:text-base"
+              className="hover:text-indigo-400 active:text-indigo-400 text-sm mx-3 lg:text-base"
               href="#blog"
             >
               Blog
@@ -79,7 +79,7 @@ const Navbar = () => {
           --------------- */}
           <li>
             <a
-              className="hover:text-indigo-600 active:indigo-600 text-sm mx-3 lg:text-base"
+              className="hover:text-indigo-400 active:text-indigo-400 text-sm mx-3 lg:text-base"
               href="#contact"
             >
               Contact
