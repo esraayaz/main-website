@@ -2,7 +2,14 @@
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { gitHub, linkedin, assets, workData } from "@/assets/assets";
+import {
+  gitHub,
+  linkedin,
+  assets,
+  workData,
+  categories,
+  getProjectsByCategory,
+} from "@/assets/assets";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -10,6 +17,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const page = () => {
   const [isScroll, setIsScroll] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState("all");
 
   // Refs for animations
   const titleRef = useRef(null);
@@ -23,6 +31,17 @@ const page = () => {
 
   const closeMenu = () => {
     sideMenuRef.current.style.transform = "translateX(16rem)";
+  };
+
+  // Projects grouped by category
+  const projectsByCategory = getProjectsByCategory();
+
+  // Filter projects by selected category
+  const getFilteredProjects = () => {
+    if (selectedCategory === "all") {
+      return workData;
+    }
+    return projectsByCategory[selectedCategory] || [];
   };
 
   useEffect(() => {
@@ -167,13 +186,13 @@ const page = () => {
                 className="w-8 mt-3 cursor-pointer"
               />
             </div>
-            <button>
-              {/* <Image
+            {/* <button>
+               <Image
                 src={assets.sun_icon}
                 alt="sun"
                 className="md:hidden w-10 mb-4 cursor-pointer"
-              /> */}
-            </button>
+              /> 
+            </button> */}
             <li>
               <a onClick={closeMenu} href="/#header">
                 🏡 Home
@@ -190,10 +209,10 @@ const page = () => {
               </a>
             </li>
             {/*<li>
-                      <a onClick={closeMenu} href="/#blog">
-                        🌱 Blog
-                      </a>
-                    </li>*/}
+                <a onClick={closeMenu} href="/#blog">
+                  🌱 Blog
+                </a>
+              </li>*/}
             <li>
               <a onClick={closeMenu} href="/#contact">
                 💌 Contact
@@ -255,18 +274,46 @@ const page = () => {
         >
           Projects
         </h2>
-        <p ref={pRef} className="text-left max-w-2xl t-5 mb-15 text-white">
+        <p ref={pRef} className="text-left max-w-2xl t-5 mb-8 text-white">
           You can check out my projects 😇
         </p>
 
+        {/* Category Filter Buttons */}
+        <div className="flex flex-wrap gap-3 my-12 justify-center md:justify-start">
+          <button
+            onClick={() => setSelectedCategory("all")}
+            className={`px-6 py-2 rounded-full border border-gray-400 transition-all duration-300 text-sm ${
+              selectedCategory === "all"
+                ? "bg-indigo-600 text-white border-indigo-600"
+                : "text-white hover:bg-gray-700 active:bg-gray-700 hover:border-gray-500 active:border-gray-500"
+            }`}
+          >
+            All Projects
+          </button>
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => setSelectedCategory(category)}
+              className={`px-6 py-2 rounded-full border border-gray-400 transition-all duration-300 text-sm ${
+                selectedCategory === category
+                  ? "bg-indigo-600 text-white border-indigo-600"
+                  : "text-white hover:bg-gray-700 active:bg-gray-700 hover:border-gray-500 active:border-gray-500"
+              }`}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+
+        {/* Projects Grid */}
         <div
           ref={projectsRef}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8 xl:gap-10"
         >
-          {workData.map((project, index) => (
+          {getFilteredProjects().map((project, index) => (
             <div
-              key={index}
-              className="aspect-square bg-no-repeat bg-center rounded-lg relative cursor-pointer group transition-all duration-500 grayscale hover:grayscale-0 active:grayscale-0 opacity-0 -translate-y-24 scale-75  w-5/6 sm:w-full mx-auto"
+              key={`${project.title}-${index}`}
+              className="aspect-square bg-no-repeat bg-center rounded-lg relative cursor-pointer group transition-all duration-500 grayscale hover:grayscale-0 active:grayscale-0 w-5/6 sm:w-full mx-auto"
               style={{
                 backgroundImage: `url(${project.bgImage})`,
                 backgroundSize: "cover",
@@ -278,6 +325,9 @@ const page = () => {
                   <h2 className="font-semibold text-sm lg:text-base">
                     {project.title}
                   </h2>
+                  <p className="text-xs text-gray-600 mt-1">
+                    {project.description}
+                  </p>
                 </div>
                 <div className="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 group-active:bg-lime-300 transition">
                   <Image
