@@ -68,47 +68,76 @@ export const linkedin = Linkedin;
 
 export const gitHub = GitHub;
 
+export const categories = [
+  "UX/UI Design",
+  "Front-End Projects",
+  "Advanced Projects",
+  "Micro Projects",
+];
+
+// Function grouping projects by categories
+export const getProjectsByCategory = () => {
+  return categories.reduce((acc, category) => {
+    acc[category] = workData.filter((project) => project.category === category);
+    return acc;
+  }, {});
+};
+
 export const workData = [
   {
     title: "Figma Prototype",
     description: "Food Delivery App | Figma",
     bgImage: "/work_1.png",
     url: "https://www.figma.com/design/RmTG5VmXeg1b4TEmzsbn8N/Little-Lemon-Prototype?node-id=0-1&t=fnObPAE59nZQZSFB-1",
+    category: "UX/UI Design",
   },
   {
-    title: "Calculator App",
+    title: "Calculator",
     description: "React + CSS",
     bgImage: "/work_2.png",
     url: "https://venerable-fudge-23278b.netlify.app/",
+    category: "Front-End Projects",
   },
   {
-    title: "Estate Agency Website",
+    title: "Agency Website",
     description: "React + Tailwind + Framer Motion",
     bgImage: "/work_3.png",
     url: "https://moonlit-sundae-393839.netlify.app/",
+    category: "Advanced Projects",
   },
   {
-    title: "Loading Bar",
-    description: "HTML + CSS + JS",
-    bgImage: "/work_7.png",
-    url: "https://gorgeous-otter-d34d6f.netlify.app/",
+    title: "Task Manager",
+    description: "HTML + CSS + JS + Tailwind",
+    bgImage: "/work_8.png",
+    url: "https://admirable-caramel-242cd9.netlify.app/",
+    category: "Front-End Projects",
   },
   {
     title: "Registration Component",
     description: "React + CSS",
     bgImage: "/work_4.png",
     url: "https://monumental-haupia-eae978.netlify.app/",
+    category: "Front-End Projects",
   },
   {
     title: "To-Do App",
     description: "JS + CSS + HTML",
     bgImage: "/work_5.png",
     url: "https://incandescent-monstera-580c26.netlify.app/",
+    category: "Micro Projects",
+  },
+  {
+    title: "Loading Bar",
+    description: "HTML + CSS + JS",
+    bgImage: "/work_7.png",
+    url: "https://gorgeous-otter-d34d6f.netlify.app/",
+    category: "Micro Projects",
   },
   {
     title: "Recipe Website",
     description: "JS + CSS + HTML",
     bgImage: "/work_6.png",
     url: "https://musical-paletas-41c815.netlify.app/",
+    category: "Micro Projects",
   },
 ];
